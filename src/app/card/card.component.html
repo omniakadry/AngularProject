@@ -1,0 +1,57 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+ <div class="post-card">
+  <div class="postIconDelete">
+    <button class="delete-icon" (click)="confirmDelete(i)" title="Delete Post">
+      <i class="fas fa-trash"></i>
+    </button>
+    <h3>{{ post.author }}</h3>
+    <p>{{ post.text }}</p>
+  </div>
+<!-- <div *ngIf="confirmingDeleteIndex === i" class="confirm-message">
+  <p>❓ هل أنت متأكد من حذف هذا البوست؟</p>
+  <button (click)="deletePost(i)" class="confirm-btn">نعم</button>
+  <button (click)="cancelDelete()" class="cancel-btn">إلغاء</button>
+</div> -->
+
+
+  <div class="post-header">
+    <img class="avatar" [src]="post.profileImage" alt="User Image" />
+    <div class="user-details">
+      <h4>{{ post.username }}</h4>
+      <p class="post-time">{{ post.time }}</p>
+    </div>
+  </div>
+
+  <div class="post-content">
+    <p>{{ post.content }}</p>
+    <img *ngIf="post.postImage" [src]="post.postImage" alt="Post Image" class="post-img" />
+  </div>
+
+
+  <div class="post-actions">
+  <button (click)="isliked()" [class.liked]="liked">
+    {{ liked ? '❤️ Liked' : '🤍 Like' }}
+  </button>
+  <span class="icon" (click)="toggleCommentInput()">💬 Comment</span>
+</div>
+
+
+  <div *ngIf="showCommentInput" class="comment-input-container">
+    <input
+      type="text"
+      [(ngModel)]="newComment"
+      placeholder="Write a comment..."
+      class="comment-input"
+    />
+    <button class="send-btn" (click)="addComment()">📨</button>
+  </div>
+
+  <div *ngFor="let comment of comments; let i = index" class="comment-box">
+    <span>{{ comment }}</span>
+    <button class="delete-btn" (click)="deleteComment(i)">Delete</button>
+  </div>
+  </div>

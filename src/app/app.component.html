@@ -1,0 +1,11 @@
+
+<app-navbar></app-navbar>
+<section>
+<app-card
+  *ngFor="let post of posts; let i = index"
+  [post]="post"
+  (delete)="removePost(i)"
+></app-card>
+</section>
+<app-footer></app-footer>
+<!-- <app-input-output></app-input-output> -->

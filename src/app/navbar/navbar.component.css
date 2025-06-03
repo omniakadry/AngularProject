@@ -1,0 +1,72 @@
+.navbar {
+  background-color: #65a5b1;
+  color: white;
+  padding: 1rem 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem; /* Larger logo */
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center; /* Vertically center items */
+}
+
+.nav-links li {
+  margin-left: 1.5rem;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ddd;
+}
+
+.nav-links li a.active {
+  color: #fdd835; /* Stronger active state */
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  /* Make it responsive! */
+  .container {
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start on small screens */
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-links li {
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #555; /* Add a border between links on small screens */
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none; /* Remove border from last item */
+  }
+}
