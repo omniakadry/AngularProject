@@ -5,12 +5,13 @@
 
  <div class="post-card">
   <div class="postIconDelete">
-    <button class="delete-icon" (click)="confirmDelete(i)" title="Delete Post">
+    <button class="delete-icon" (click)="confirmDelete()" title="Delete Post">
       <i class="fas fa-trash"></i>
     </button>
     <h3>{{ post.author }}</h3>
     <p>{{ post.text }}</p>
   </div>
+
 <!-- <div *ngIf="confirmingDeleteIndex === i" class="confirm-message">
   <p>❓ هل أنت متأكد من حذف هذا البوست؟</p>
   <button (click)="deletePost(i)" class="confirm-btn">نعم</button>

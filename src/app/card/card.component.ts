@@ -53,10 +53,17 @@ isliked() {
   }
     confirmingDeleteIndex: number | null = null;
 
-confirmDelete(index: number) {
-  const confirmed = confirm("Do you really want to delete this post .. ?!");
-  if (confirmed) {
-    this.deletePost(index);
+// confirmDelete(index: number) {
+//   const confirmed = confirm("Do you really want to delete this post .. ?!");
+//   if (confirmed) {
+//     this.deletePost(index);
+//   }
+// }
+@Output() delete = new EventEmitter<void>();
+
+confirmDelete() {
+  if (confirm('Are you sure you want to delete this post?')) {
+    this.delete.emit();
   }
 }
 

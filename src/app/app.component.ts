@@ -53,6 +53,10 @@ export class AppComponent {
    removePost(idx: number): void {
     this.posts.splice(idx, 1);
   }
+  deletePost(index: number) {
+  this.posts.splice(index, 1);
+}
+
 };
 
 

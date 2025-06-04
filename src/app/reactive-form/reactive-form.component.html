@@ -1,0 +1,32 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Name:</label>
+    <input id="name" type="text" formControlName="name" />
+    <div *ngIf="myForm.get('name')?.touched && myForm.get('name')?.invalid">
+  name is required    </div>
+  </div>
+
+  <div>
+    <label for="email">Email</label>
+    <input id="email" type="email" formControlName="email" />
+    <div *ngIf="myForm.get('email')?.touched && myForm.get('email')?.invalid">
+  invalid email    </div>
+  </div>
+
+  <div>
+    <label for="password">password:</label>
+    <input id="password" type="password" formControlName="password" />
+    <div *ngIf="myForm.get('password')?.touched && myForm.get('password')?.invalid">
+  password must be at least 6 characters    </div>
+  </div>
+
+
+    <div class="btn-group">
+    <button  type="submit">submit</button>
+    <button type="button" (click)="onReset()">Reset</button>
+  </div>
+
+</form>
+
+<h1>{{user?.email??''}}</h1>
+<h1>{{ user?.name?? ''}}</h1>

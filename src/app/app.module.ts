@@ -9,6 +9,8 @@ import { InputOutputComponent } from './demo/input-output/input-output.component
 import { ParentComponent } from './demo/input-output/parent/parent.component';
 import { ChildComponent } from './demo/input-output/child/child.component';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -18,15 +20,18 @@ import { FormsModule } from '@angular/forms';
     InputOutputComponent,
     ParentComponent,
     ChildComponent,
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserModule,
+    AppRoutingModule,
     FormsModule,
-    CardComponent
+    CardComponent,
+    ReactiveFormsModule,
+    ReactiveFormComponent
 ],
-  providers: [],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
